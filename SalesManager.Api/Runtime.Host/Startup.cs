@@ -1,4 +1,5 @@
 using SalesManager.SalesManager.Api.Runtime.Host.IoC;
+using System.Text.Json.Serialization;
 
 namespace SalesManager.SalesManager.Api.Runtime.Host.Extensions;
 
@@ -22,7 +23,10 @@ public class Startup : Interfaces.IStartup
                 policy.AllowAnyHeader();
             });
         });
-        services.AddControllers();
+        services.AddControllers().AddJsonOptions(options =>
+        {
+            options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+        });
         services.AddRouting(options => options.LowercaseUrls = true);
         services.AddSwagger();
         services.RegisterServices(Configuration);
