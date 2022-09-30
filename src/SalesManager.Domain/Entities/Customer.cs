@@ -1,4 +1,6 @@
-﻿namespace SalesManager.Domain.Entities;
+﻿using SalesManager.Domain.Validators;
+
+namespace SalesManager.Domain.Entities;
 
 public class Customer : BaseEntity
 {
@@ -15,6 +17,9 @@ public class Customer : BaseEntity
         Phone = phone;
         Email = email;
         IsActive = isActive;
+
+        var validator = new CustomerValidator();
+        validator.Validate(this);
     }
 
     public string FullName { get; private set; }
