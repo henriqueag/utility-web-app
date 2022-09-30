@@ -3,7 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesManager.Api", "SalesManager.Api\SalesManager.Api.csproj", "{ACC40E9D-E595-4B4C-938A-6B0B5712BA62}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C147D22C-DBEB-4195-A675-52D54476E343}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.targets = src\Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{76FE79D1-C378-4FEB-A0FB-319FFF83E436}"
+	ProjectSection(SolutionItems) = preProject
+		test\Directory.Build.targets = test\Directory.Build.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesManager.Domain", "src\SalesManager.Domain\SalesManager.Domain.csproj", "{CB0F59C6-A5FA-49EB-90D1-F2898D0A840D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesManager.Application", "src\SalesManager.Application\SalesManager.Application.csproj", "{D2AA6C40-2484-47FB-BE48-C8EB0BD053E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesManager.Provider.EntityFramework", "src\SalesManager.Provider.EntityFramework\SalesManager.Provider.EntityFramework.csproj", "{884FD6E8-E544-44E2-96F7-E4B16A5B0B92}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesManager.Api", "src\SalesManager.Api\SalesManager.Api.csproj", "{F7833D0E-576F-4201-9ED9-6EDB89FA8D99}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +27,31 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ACC40E9D-E595-4B4C-938A-6B0B5712BA62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ACC40E9D-E595-4B4C-938A-6B0B5712BA62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ACC40E9D-E595-4B4C-938A-6B0B5712BA62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ACC40E9D-E595-4B4C-938A-6B0B5712BA62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB0F59C6-A5FA-49EB-90D1-F2898D0A840D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB0F59C6-A5FA-49EB-90D1-F2898D0A840D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB0F59C6-A5FA-49EB-90D1-F2898D0A840D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB0F59C6-A5FA-49EB-90D1-F2898D0A840D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2AA6C40-2484-47FB-BE48-C8EB0BD053E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2AA6C40-2484-47FB-BE48-C8EB0BD053E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2AA6C40-2484-47FB-BE48-C8EB0BD053E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2AA6C40-2484-47FB-BE48-C8EB0BD053E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{884FD6E8-E544-44E2-96F7-E4B16A5B0B92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{884FD6E8-E544-44E2-96F7-E4B16A5B0B92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{884FD6E8-E544-44E2-96F7-E4B16A5B0B92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{884FD6E8-E544-44E2-96F7-E4B16A5B0B92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7833D0E-576F-4201-9ED9-6EDB89FA8D99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7833D0E-576F-4201-9ED9-6EDB89FA8D99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7833D0E-576F-4201-9ED9-6EDB89FA8D99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7833D0E-576F-4201-9ED9-6EDB89FA8D99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CB0F59C6-A5FA-49EB-90D1-F2898D0A840D} = {C147D22C-DBEB-4195-A675-52D54476E343}
+		{D2AA6C40-2484-47FB-BE48-C8EB0BD053E0} = {C147D22C-DBEB-4195-A675-52D54476E343}
+		{884FD6E8-E544-44E2-96F7-E4B16A5B0B92} = {C147D22C-DBEB-4195-A675-52D54476E343}
+		{F7833D0E-576F-4201-9ED9-6EDB89FA8D99} = {C147D22C-DBEB-4195-A675-52D54476E343}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7F31A89E-0173-4220-A5C0-E8AED6FD2B08}
