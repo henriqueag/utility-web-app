@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <LangVersion>10.0</LangVersion>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Folder Include="Commands\" />
+        <Folder Include="Dtos\" />
+        <Folder Include="Mapping\" />
+        <Folder Include="Queries\" />
+    </ItemGroup>
+
+</Project>
