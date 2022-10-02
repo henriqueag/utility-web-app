@@ -38,9 +38,9 @@ public static class WebApplicationExtensions
 
         var customers = new List<Customer>
         {
-            new("Cliente 1", "111.111.111-11", new DateTime(1998, 03, 23), "(37) 99999-9999", "cliente1@email.com", true),
-            new("Cliente 2", "222.222.222-22", new DateTime(1998, 04, 15), "(37) 98888-8888", "cliente2@email.com", true),
-            new("Cliente 3", "333.333.333-33", new DateTime(1998, 05, 9), "(37) 97777-7777", "cliente3@email.com", true),
+            new("Cliente 1", "111.111.111-11", new DateTime(1998, 03, 23), "(37) 99999-9999", "cliente1@email.com"),
+            new("Cliente 2", "222.222.222-22", new DateTime(1998, 04, 15), "(37) 98888-8888", "cliente2@email.com"),
+            new("Cliente 3", "333.333.333-33", new DateTime(1998, 05, 9), "(37) 97777-7777", "cliente3@email.com"),
         };
 
         var paymentMethods = new List<PaymentMethod>
