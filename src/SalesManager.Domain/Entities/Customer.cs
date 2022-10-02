@@ -1,25 +1,24 @@
-﻿using SalesManager.Domain.Validators;
+﻿namespace SalesManager.Domain.Entities;
 
-namespace SalesManager.Domain.Entities;
-
-public class Customer : BaseEntity
+public partial class Customer : BaseEntity
 {
+    public const int FullNameMinLength = 4;
     public const int FullNameMaxLength = 128;
     public const int EmailMaxLength = 256;
 
-    private Customer() { }
+    public Customer() 
+    {
+        IsActive = true;
+    }
 
-    public Customer(string fullName, string cpf, DateTime birthDate, string phone, string email, bool isActive)
+    public Customer(string fullName, string cpf, DateTime birthDate, string phone, string email)
+        : this()
     {
         FullName = fullName;
         Cpf = cpf;
         BirthDate = birthDate;
         Phone = phone;
         Email = email;
-        IsActive = isActive;
-
-        var validator = new CustomerValidator();
-        validator.Validate(this);
     }
 
     public string FullName { get; private set; }

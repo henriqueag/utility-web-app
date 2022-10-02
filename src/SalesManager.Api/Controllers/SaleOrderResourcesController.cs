@@ -63,7 +63,7 @@ public class SaleOrderResourcesController : ControllerBase
 
         saleOrderData = new()
         {
-            CustomerData = customers[0].ToCustomerData(),
+            CustomerData = customers[0],
             PaymentMethodData = payments[1].ToPaymentMethodData(),
             SaleOrderItemsData = items,
             Discount = 15
@@ -125,7 +125,7 @@ public class SaleOrderResourcesController : ControllerBase
 public class SaleOrderData
 {
     public Guid Id { get; set; }
-    public CustomerData CustomerData { get; set; }
+    public Customer CustomerData { get; set; }
     public PaymentMethodData PaymentMethodData { get; set; }
     public IList<SaleOrderItemData> SaleOrderItemsData { get; set; }
     public decimal Discount { get; set; }
@@ -204,7 +204,7 @@ public static class DtosExtensions
 
     public static SaleOrder ToSaleOrder(this SaleOrderData saleOrderData)
     {
-        return new SaleOrder(saleOrderData.CustomerData.ToCustomer(),
+        return new SaleOrder(saleOrderData.CustomerData,
             saleOrderData.PaymentMethodData.ToPaymentMethod(),
             saleOrderData.SaleOrderItemsData.Select(item => item.ToSaleOrderItem()).ToList(),
             saleOrderData.Discount,

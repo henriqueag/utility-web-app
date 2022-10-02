@@ -11,8 +11,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Using Include="Microsoft.EntityFrameworkCore"/>
-        <Using Include="Microsoft.EntityFrameworkCore.SqlServer"/>
+        <Using Include="Microsoft.EntityFrameworkCore" />
+        <Using Include="Microsoft.EntityFrameworkCore.SqlServer" />
     </ItemGroup>
 
     <ItemGroup>

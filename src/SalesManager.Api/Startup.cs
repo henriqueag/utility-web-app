@@ -26,7 +26,7 @@ public class Startup : Interfaces.IStartup
         });
         services.AddControllers().AddJsonOptions(options =>
         {
-            options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+            options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
         });
         services.AddRouting(options => options.LowercaseUrls = true);
         services.AddSwagger();
