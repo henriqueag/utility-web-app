@@ -11,4 +11,5 @@ public interface ICustomerBuilder : IEntityBuilder<Customer>
     ICustomerBuilder WithBirthDate(DateTime birthDate);
     ICustomerBuilder WithPhone(string phone);
     ICustomerBuilder WithEmail(string email);
+    ICustomerBuilder WithIsActive(bool isActive);
 }

@@ -63,6 +63,12 @@ public partial class Customer
             return this;
         }
 
+        public ICustomerBuilder WithIsActive(bool isActive)
+        {
+            _customer.IsActive = isActive;
+            return this;
+        }
+
         public Customer Build()
         {
             var validationResult = _validator.Validate(_customer);
