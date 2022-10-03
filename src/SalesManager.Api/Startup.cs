@@ -1,5 +1,6 @@
 using SalesManager.Api.Extensions;
 using SalesManager.Api.IoC;
+using SalesManager.Provider.EntityFramework;
 using System.Text.Json.Serialization;
 
 namespace SalesManager.Api;
@@ -35,10 +36,10 @@ public class Startup : Interfaces.IStartup
 
     public void Configure(WebApplication app, IWebHostEnvironment env)
     {
-        app.ApplyMigrations();
         app.UseSwaggerUI();
         app.UseAuthorization();
         app.UseCors();
         app.MapControllers();
+        app.Services.ApplyMigrations();
     }
 }

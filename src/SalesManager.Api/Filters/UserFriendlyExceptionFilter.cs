@@ -13,12 +13,18 @@ public class UserFriendlyExceptionFilter : IExceptionFilter
             && context.Exception.GetType() == typeof(UserFriendlyException)
             && !context.ExceptionHandled)
         {
-            var response = new ErrorMessageWithDetails
-            {
-                Code = ex.Code,
-                Message = ex.Message,
-                DetailedErrors = ex.Errors
-            };
+            var response = ex.Errors is null 
+                ? new ErrorMessage
+                {
+                    Code = ex.Code,
+                    Message = ex.Message
+                }
+                : new ErrorMessageWithDetails
+                {
+                    Code = ex.Code,
+                    Message = ex.Message,
+                    DetailedErrors = ex.Errors
+                };
 
             context.Result = new ObjectResult(response);
             context.HttpContext.Response.StatusCode = 400;

@@ -4,6 +4,11 @@ namespace SalesManager.Domain.Exceptions;
 
 public class UserFriendlyException : Exception
 {
+    public UserFriendlyException(string code, string message) : base(message)
+    {
+        Code = code;
+    }
+
     public UserFriendlyException(string code,string message, IEnumerable<ErrorMessageWithDetails> errors) 
         : base(message)
     {

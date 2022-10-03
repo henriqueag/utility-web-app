@@ -23,5 +23,8 @@ public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
         builder.Property(x => x.Email)
             .IsRequired(false)
             .HasMaxLength(Customer.EmailMaxLength);
+
+        builder.HasMany(x => x.SalesOrders)
+            .WithOne(x => x.Customer);
     }
 }

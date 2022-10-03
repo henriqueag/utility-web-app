@@ -1,10 +1,11 @@
 ﻿using MediatR;
 using Microsoft.Extensions.Logging;
+using SalesManager.Application.Extensions;
 using SalesManager.Domain.Builders;
 using SalesManager.Domain.Entities;
 using SalesManager.Domain.Repository;
 
-namespace SalesManager.Application.Commands.CreateCustomerCommand;
+namespace SalesManager.Application.Commands.CreateCustomer;
 
 public class CreateCustomerHandler : IRequestHandler<CreateCustomerCommand, Guid>
 {
@@ -24,13 +25,8 @@ public class CreateCustomerHandler : IRequestHandler<CreateCustomerCommand, Guid
         _logger.LogInformation("O comando {CommandName} foi solicitado recebendo de entrada o objeto {@Request}", nameof(CreateCustomerCommand), request);
 
         var customer = _builder
-            .WithErrorCode("customer-build-failed")
-            .WithErrorMessage($"Falha na construção do objeto do tipo {nameof(Customer)}")
-            .WithFullName(request.FullName)
             .WithCpf(request.Cpf)
-            .WithBirthDate(request.BirthDate)
-            .WithPhone(request.Phone)
-            .WithEmail(request.Email)
+            .FromCustomerData(request)
             .Build();
 
         await _repository.Create(customer, cancellationToken);
