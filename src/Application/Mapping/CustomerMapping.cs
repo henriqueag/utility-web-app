@@ -1,4 +1,4 @@
-﻿using Application.Dtos;
+﻿using Application.Dtos.Customer;
 using Domain.Entities;
 
 namespace Application.Mapping;

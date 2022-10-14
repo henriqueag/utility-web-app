@@ -14,7 +14,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Using Include="System.Text.Json.Serialization"/>
+        <Using Include="System.Text.Json.Serialization" />
         <Using Include="FluentValidation" />
         <Using Include="FluentValidation.Validators" />
         <Using Include="System.Text.RegularExpressions" />

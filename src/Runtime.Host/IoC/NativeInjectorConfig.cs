@@ -1,5 +1,6 @@
 using Application;
 using Domain;
+using Identity;
 using Infrastructure;
 using Presentation.RestApi.Filters;
 
@@ -12,7 +13,8 @@ public static class NativeInjectorConfig
         services.RegisterDomainServices();
         services.RegisterApplicationServices();
         services.RegisterInfrastructureServices(configuration);
-        
+        services.RegisterIdentityServices(configuration);
+
         services.AddMvc(options =>
         {
             options.Filters.Add<UserFriendlyExceptionFilter>();

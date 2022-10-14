@@ -1,5 +1,4 @@
 using Serilog;
-using Serilog.Filters;
 
 namespace Runtime.Host.Extensions;
 
@@ -13,8 +12,9 @@ public static class WebApplicationBuilderExtensions
         startup.ConfigureServices(builder.Services);
 
         var app = builder.Build();
-
-        startup.Configure(app, app.Environment);
+        app.UseSerilogRequestLogging();
+        
+        startup.Configure(app, app.Environment);        
         
         app.Run();
 
@@ -24,13 +24,15 @@ public static class WebApplicationBuilderExtensions
     public static WebApplicationBuilder ConfigureLogging(this WebApplicationBuilder builder)
     {
         builder.Logging.ClearProviders();
-
+        
         Log.Logger = new LoggerConfiguration()
-            .MinimumLevel.Verbose()
+            .MinimumLevel.Information()
+            .ReadFrom.Configuration(builder.Configuration)
             .Enrich.FromLogContext()
             .Enrich.WithMachineName()
-            .Filter.ByExcluding(Matching.FromSource("Microsoft.AspNetCore"))
-            .Filter.ByExcluding(Matching.FromSource("Microsoft.EntityFrameworkCore"))
+            .Enrich.WithProperty("ApplicationName", "Sales Manager")
+            .Enrich.WithProperty("ApplicationVersion", "1.0.0")
+            .Enrich.WithProperty("EnvironmentName", builder.Environment.EnvironmentName)
             .WriteTo.Console()
             .CreateLogger();
 

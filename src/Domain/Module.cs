@@ -1,5 +1,5 @@
-﻿using Domain.Builders;
-using Domain.Entities;
+﻿using Domain.Entities;
+using Domain.Interfaces.Builders;
 using Domain.Validators;
 using Microsoft.Extensions.DependencyInjection;
 using static Domain.Entities.Customer;

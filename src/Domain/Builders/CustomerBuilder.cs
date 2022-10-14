@@ -1,5 +1,5 @@
-﻿using Domain.Builders;
-using Domain.Exceptions;
+﻿using Domain.Exceptions;
+using Domain.Interfaces.Builders;
 using Domain.ValueObjects;
 
 namespace Domain.Entities;
