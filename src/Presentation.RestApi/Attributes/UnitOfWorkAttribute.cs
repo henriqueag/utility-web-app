@@ -1,4 +1,4 @@
-﻿using Application.UnitOfWork;
+﻿using Domain.Interfaces.UnitOfWork;
 
 namespace Presentation.RestApi.Attributes;
 

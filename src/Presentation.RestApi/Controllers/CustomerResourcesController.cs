@@ -1,7 +1,7 @@
 ﻿using Application.Commands.CreateCustomer;
 using Application.Commands.DeleteCustomer;
 using Application.Commands.UpdateCustomer;
-using Application.Dtos;
+using Application.Dtos.Customer;
 using Application.Queries.GetAllCustomers;
 using Domain.ValueObjects;
 using Presentation.RestApi.Attributes;
@@ -11,7 +11,7 @@ namespace Presentation.RestApi.Controllers;
 [Route(CustomersRoute)]
 public class CustomerResourcesController : AbstractController
 {
-    private const string CustomersRoute = "api/customers/resources";
+    private const string CustomersRoute = "api/customers";
 
     [UnitOfWork]
     [HttpPost]

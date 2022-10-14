@@ -1,6 +1,6 @@
-﻿using Application.UnitOfWork;
-using Domain.Entities;
-using Domain.Repository;
+﻿using Domain.Entities;
+using Domain.Interfaces.Repository;
+using Domain.Interfaces.UnitOfWork;
 using Infrastructure.DataContext;
 using Infrastructure.Repositories;
 using Microsoft.Extensions.Configuration;

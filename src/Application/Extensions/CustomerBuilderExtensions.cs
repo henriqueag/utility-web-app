@@ -1,5 +1,5 @@
-﻿using Application.Dtos;
-using Domain.Builders;
+﻿using Application.Dtos.Customer;
+using Domain.Interfaces.Builders;
 
 namespace Application.Extensions;
 
